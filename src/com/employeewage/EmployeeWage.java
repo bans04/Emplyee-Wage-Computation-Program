@@ -1,4 +1,7 @@
 package com.employeewage;
+
+import java.util.Scanner;
+
 /*
  * --------------------Employee Wage Computation Program--------------------
  *Print Welcome message
@@ -16,11 +19,11 @@ package com.employeewage;
 public class EmployeeWage {
 	static final int fullTime = 1;
 	static final int partTime = 2;
-	static int employeeWagePerHr = 20;
-	static int maxWorkingHr = 100;
-	static int maxWorkingDays = 20;
+	//static int employeeWagePerHr = 20;
+	//static int maxWorkingHr = 100;
+	//static int maxWorkingDays = 20;
 	
-	public void calculateEmployeeWage() {
+	public void calculateEmployeeWage(String companyName, int employeeWagePerHr, int maxWorkingHr, int maxWorkingDays) {
 		int employeeHr = 0;
 		int totalEmployeeWage = 0;
 		int dailyEmployeeWage = 0;
@@ -59,12 +62,15 @@ public class EmployeeWage {
 		totalWorkingDay++;
 		//System.out.println("Daily employee wage is :-> " + dailyEmployeeWage);
 		}
-		System.out.print("Employee total working Hr is "+ totalWorkingHr + " in "  + totalWorkingDay + " Days & Wage is:-> " + totalEmployeeWage);
+		System.out.print("Employee Total wage for " + companyName + ":->\nTotal working Hr is "+ totalWorkingHr + " in "  + totalWorkingDay + " Days & Wage is:-> " + totalEmployeeWage);
 	}
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Program..|");
+		Scanner scanner = new Scanner(System.in);
 		EmployeeWage employeeWage = new EmployeeWage();
-		employeeWage.calculateEmployeeWage();
+		System.out.print("Enter company name:-> ");
+		String companyName = scanner.next();
+		employeeWage.calculateEmployeeWage(companyName, 60, 120, 25);
 	}
 }
