@@ -20,17 +20,7 @@ public class EmployeeWage {
 	static int maxWorkingHr = 100;
 	static int maxWorkingDays = 20;
 	
-	public static void main(String[] args) {
-		System.out.println("Welcome to Employee Wage Computation Program..|");
-		
-		/*if(random == fullTime) {
-			System.out.println("Employee is Present full time..|");
-			employeeHr = 8;
-		}else {
-			//System.out.println("Employee is Absent..|");
-			System.out.println("Emplyee is present part time..|");
-			employeeHr = 4;
-		}*/
+	public void calculateEmployeeWage() {
 		int employeeHr = 0;
 		int totalEmployeeWage = 0;
 		int dailyEmployeeWage = 0;
@@ -39,7 +29,6 @@ public class EmployeeWage {
 		int absent = 0;
 		int partTimec = 0;
 		int fullTimec = 0;
-		
 		
 		//for(int i = 1; i <= 20 && totalEmployeeHr <= maxWorkingHr; i++) {
 		while(totalWorkingHr <= maxWorkingHr && totalWorkingDay < maxWorkingDays) {
@@ -70,11 +59,12 @@ public class EmployeeWage {
 		totalWorkingDay++;
 		//System.out.println("Daily employee wage is :-> " + dailyEmployeeWage);
 		}
-		
-		//System.out.println("Employee Absent = " + absent + " Days");
-		//System.out.println("Employee present Full time = " + fullTimec + " Days");
-		//System.out.println("Employee presnt Part time = " + partTimec + " Days");
-		//System.out.println("Total Days = " + totalWorkingDay);
 		System.out.print("Employee total working Hr is "+ totalWorkingHr + " in "  + totalWorkingDay + " Days & Wage is:-> " + totalEmployeeWage);
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Welcome to Employee Wage Computation Program..|");
+		EmployeeWage employeeWage = new EmployeeWage();
+		employeeWage.calculateEmployeeWage();
 	}
 }
